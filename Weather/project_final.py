@@ -1,13 +1,14 @@
-from dotenv import load_dotenv
-import os
 import requests
 import json
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from geonamescache import GeonamesCache
+from dotenv import load_dotenv
+import os
 
 load_dotenv()
+
 # create an instance of the GeonamesCache class
 gc = GeonamesCache()
 
@@ -16,8 +17,6 @@ cities = gc.get_cities()
 
 def get_weather(city_name):
     api_key = os.getenv('API_KEY')
-    if api_key is None:
-        raise ValueError('API_KEY environment variable is not set.')
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
