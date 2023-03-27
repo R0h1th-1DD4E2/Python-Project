@@ -1,0 +1,4 @@
+requests==2.26.0
+geonamescache==1.2.0
+dotenv==0.19.1
+Pillow==8.4.0
